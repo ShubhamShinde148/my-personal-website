@@ -137,24 +137,52 @@ transform:translateY(0);
 }
 
 /* ================= SKILLS ================= */
-.skills{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:30px;
+.skills-section {
+  padding: 100px 20px;
+  background: #0f172a;
+  text-align: center;
 }
 
-.skill{
-background:rgba(255,255,255,0.05);
-padding:30px;
-text-align:center;
-border-radius:20px;
-transition:0.4s;
+.skills-container {
+  max-width: 1000px;
+  margin: auto;
 }
 
-.skill:hover{
-transform:translateY(-10px);
-box-shadow:0 0 20px #00ffff;
+.skills-container h2 {
+  font-size: 32px;
+  margin-bottom: 60px;
 }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+}
+
+.skill-card {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  transition: 0.3s;
+}
+
+.skill-card i {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #3b82f6;
+}
+
+.skill-card h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: #3b82f6;
+}
+
 
 /* ================= PROJECTS ================= */
 .projects{
@@ -368,16 +396,46 @@ padding:30px;
 <a href="#projects" class="btn">View Projects</a>
 </section>
 
-<section id="skills">
-<h2>My Skills</h2>
-<div class="skills">
-<div class="skill"><i class="fab fa-html5"></i><p>HTML5</p></div>
-<div class="skill"><i class="fab fa-css3-alt"></i><p>CSS3</p></div>
-<div class="skill"><i class="fab fa-js"></i><p>JavaScript</p></div>
-<div class="skill"><i class="fab fa-react"></i><p>React</p></div>
-<div class="skill"><i class="fab fa-node-js"></i><p>Node.js</p></div>
-<div class="skill"><i class="fab fa-git-alt"></i><p>GitHub</p></div>
-</div>
+<section id="skills" class="skills-section">
+  <div class="skills-container">
+
+    <h2>Skills</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <i class="fab fa-html5"></i>
+        <h4>HTML5</h4>
+      </div>
+
+      <div class="skill-card">
+        <i class="fab fa-css3-alt"></i>
+        <h4>CSS3</h4>
+      </div>
+
+      <div class="skill-card">
+        <i class="fab fa-js"></i>
+        <h4>JavaScript</h4>
+      </div>
+
+      <div class="skill-card">
+        <i class="fab fa-react"></i>
+        <h4>React</h4>
+      </div>
+
+      <div class="skill-card">
+        <i class="fab fa-node-js"></i>
+        <h4>Node.js</h4>
+      </div>
+
+      <div class="skill-card">
+        <i class="fab fa-git-alt"></i>
+        <h4>Git & GitHub</h4>
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
 <section id="projects" class="projects-section">
@@ -517,6 +575,7 @@ sec.classList.add("show");
 
 </body>
 </html>
+
 
 
 
