@@ -3,875 +3,364 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shubham Shinde | Developer</title>
+<title>Shubham Shinde | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
 
-/* ================= BASE ================= */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-scroll-behavior:smooth;
 font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#000000);
-background-size:400% 400%;
-animation:bgAnimation 12s ease infinite;
+background:#0f172a;
 color:white;
 overflow-x:hidden;
 }
 
-@keyframes bgAnimation{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-/* ================= CUSTOM CURSOR ================= */
-.cursor{
+/* NAVBAR */
+nav{
 position:fixed;
-width:15px;
-height:15px;
-background:#00ffff;
-border-radius:50%;
-pointer-events:none;
-transform:translate(-50%,-50%);
-transition:0.1s;
-z-index:9999;
-}
-.hero-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 8%;
-  background: #0f172a;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Animated Gradient Blobs */
-.hero-section::before,
-.hero-section::after {
-  content: "";
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, #3b82f6, transparent 70%);
-  border-radius: 50%;
-  animation: floatBlob 8s ease-in-out infinite;
-}
-
-.hero-section::before {
-  top: -100px;
-  left: -100px;
-}
-
-.hero-section::after {
-  bottom: -100px;
-  right: -100px;
-  animation-delay: 4s;
-}
-
-@keyframes floatBlob {
-  0%,100% { transform: translateY(0px); }
-  50% { transform: translateY(40px); }
-}
-
-/* Left Side */
-.hero-left {
-  max-width: 500px;
-  z-index: 2;
-}
-
-.reveal-text span {
-  display: block;
-  font-size: 60px;
-  font-weight: 700;
-  opacity: 0;
-  transform: translateY(50px);
-  animation: revealUp 1s forwards;
-}
-
-.reveal-text span:nth-child(2){
-  animation-delay: 0.4s;
-}
-
-@keyframes revealUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.typing-text {
-  font-size: 22px;
-  margin: 20px 0;
-  color: #3b82f6;
-  min-height: 30px;
-}
-
-.hero-desc {
-  color: #9ca3af;
-  margin-bottom: 30px;
-}
-
-/* Buttons */
-.btn-primary {
-  padding: 12px 28px;
-  background: #3b82f6;
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-  margin-right: 15px;
-  transition: 0.3s;
-}
-
-.btn-primary:hover {
-  background: #2563eb;
-}
-
-.btn-outline {
-  padding: 12px 28px;
-  border: 1px solid #3b82f6;
-  color: #3b82f6;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn-outline:hover {
-  background: #3b82f6;
-  color: white;
-}
-
-/* Right Side Floating Cards */
-.hero-right {
-  position: relative;
-  z-index: 2;
-}
-
-.floating-card {
-  width: 120px;
-  height: 120px;
-  background: #1e293b;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
-  animation: floatCard 4s ease-in-out infinite;
-}
-
-.delay1 { animation-delay: 1s; }
-.delay2 { animation-delay: 2s; }
-
-@keyframes floatCard {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
-
-/* Scroll Indicator */
-.scroll-indicator {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  width: 25px;
-  height: 40px;
-  border: 2px solid #3b82f6;
-  border-radius: 20px;
-  transform: translateX(-50%);
-}
-
-.scroll-indicator::after {
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  width: 6px;
-  height: 6px;
-  background: #3b82f6;
-  border-radius: 50%;
-  transform: translateX(-50%);
-  animation: scrollMove 2s infinite;
-}
-
-@keyframes scrollMove {
-  0% { top: 8px; opacity: 1; }
-  100% { top: 20px; opacity: 0; }
-}
-
-/* Responsive */
-@media(max-width: 900px){
-  .hero-section {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-right {
-    display: none;
-  }
-}
-
-/* ================= SIDEBAR ================= */
-.sidebar{
-position:fixed;
-left:0;
 top:0;
-height:100vh;
-width:220px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
+width:100%;
 display:flex;
-flex-direction:column;
+justify-content:space-between;
 align-items:center;
-padding-top:40px;
+padding:20px 8%;
+z-index:1000;
+transition:0.4s;
 }
 
-.sidebar h2{
-margin-bottom:40px;
-font-size:20px;
-color:#00ffff;
+nav ul{
+display:flex;
+list-style:none;
 }
 
-.sidebar a{
+nav ul li{
+margin-left:30px;
+}
+
+nav ul li a{
 color:white;
 text-decoration:none;
-margin:15px 0;
 transition:0.3s;
 }
 
-.sidebar a:hover{
-color:#00ffff;
-transform:translateX(5px);
+nav ul li a:hover{
+color:#3b82f6;
 }
 
-/* ================= MAIN CONTENT ================= */
-.main{
-margin-left:220px;
-padding:60px;
-}
-
-/* ================= HERO ================= */
+/* HERO */
 .hero{
-min-height:100vh;
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
+align-items:center;
+text-align:center;
 }
 
 .hero h1{
 font-size:60px;
-background:linear-gradient(90deg,#00ffff,#ff00ff);
--webkit-background-clip:text;
-color:transparent;
+margin-bottom:20px;
+}
+
+.hero h2{
+color:#3b82f6;
+margin-bottom:20px;
 }
 
 .hero p{
-margin-top:20px;
-max-width:500px;
-opacity:0.8;
+max-width:600px;
+color:#94a3b8;
 }
 
+/* BUTTON */
 .btn{
-display:inline-block;
 margin-top:30px;
-padding:12px 30px;
-border:2px solid #00ffff;
-border-radius:30px;
-color:#00ffff;
+padding:12px 28px;
+background:#3b82f6;
+color:white;
+border-radius:6px;
 text-decoration:none;
-transition:0.4s;
+transition:0.3s;
 }
 
 .btn:hover{
-background:#00ffff;
-color:black;
-box-shadow:0 0 20px #00ffff;
+background:#2563eb;
 }
 
-/* ================= SECTION ================= */
+/* SECTION */
 section{
-margin-bottom:120px;
-opacity:0;
-transform:translateY(40px);
-transition:1s;
+padding:100px 8%;
 }
 
-section.show{
-opacity:1;
-transform:translateY(0);
+h2.section-title{
+text-align:center;
+margin-bottom:60px;
+font-size:32px;
 }
 
-/* ================= SKILLS ================= */
-.skills-section {
-  padding: 100px 20px;
-  background: #0f172a;
-  text-align: center;
-}
-
-.skills-container {
-  max-width: 1000px;
-  margin: auto;
-}
-
-.skills-container h2 {
-  font-size: 32px;
-  margin-bottom: 60px;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 30px;
-}
-
-.skill-card {
-  background: #1e293b;
-  padding: 30px;
-  border-radius: 12px;
-  border: 1px solid #334155;
-  transition: 0.3s;
-}
-  .animate-fade,
-.animate-left,
-.animate-right,
-.animate-scale {
-  opacity: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-
-.skill-card i {
-  font-size: 40px;
-  margin-bottom: 15px;
-  color: #3b82f6;
-}
-
-.skill-card h4 {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.skill-card:hover {
-  transform: translateY(-5px);
-  border-color: #3b82f6;
-}
-
-
-/* ================= PROJECTS ================= */
-.projects{
+/* SKILLS */
+.skills-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
 gap:30px;
 }
 
-.project{
-position:relative;
-overflow:hidden;
-border-radius:20px;
+.skill-card{
+background:#1e293b;
+padding:30px;
+border-radius:12px;
+text-align:center;
+border:1px solid #334155;
+transition:0.3s;
 }
 
-.project img{
-width:100%;
-height:250px;
-object-fit:cover;
-transition:0.5s;
+.skill-card:hover{
+transform:translateY(-5px);
+border-color:#3b82f6;
 }
 
-.project:hover img{
-transform:scale(1.1);
+.skill-card i{
+font-size:40px;
+margin-bottom:15px;
+color:#3b82f6;
 }
 
-.overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.7);
+/* PROJECTS */
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.project-card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+border:1px solid #334155;
+transition:0.3s;
+}
+
+.project-card:hover{
+transform:translateY(-8px);
+border-color:#3b82f6;
+}
+
+.project-card h3{
+margin-bottom:10px;
+}
+
+.project-card p{
+color:#94a3b8;
+margin-bottom:15px;
+}
+
+/* CONTACT */
+.contact-form{
+max-width:500px;
+margin:auto;
 display:flex;
-justify-content:center;
-align-items:center;
-opacity:0;
-transition:0.5s;
+flex-direction:column;
+gap:20px;
 }
 
-.project:hover .overlay{
-opacity:1;
-}
-
-.overlay a{
+.contact-form input,
+.contact-form textarea{
+padding:14px;
+border-radius:8px;
+border:1px solid #334155;
+background:#1e293b;
 color:white;
-font-size:20px;
-text-decoration:none;
 }
 
-/* ================= CONTACT ================= */
-.contact-section {
-  padding: 100px 20px;
-  background: #111827;
-  display: flex;
-  justify-content: center;
+.contact-form button{
+padding:14px;
+border:none;
+border-radius:8px;
+background:#3b82f6;
+color:white;
+cursor:pointer;
+transition:0.3s;
 }
 
-.contact-container {
-  width: 100%;
-  max-width: 500px;
-  text-align: center;
+.contact-form button:hover{
+background:#2563eb;
 }
 
-.contact-container h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
+/* ANIMATION BASE */
+.animate-fade,
+.animate-left,
+.animate-right,
+.animate-scale{
+opacity:0;
 }
 
-.contact-subtitle {
-  color: #9ca3af;
-  margin-bottom: 40px;
-  font-size: 14px;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.input-group input,
-.input-group textarea {
-  width: 100%;
-  padding: 14px;
-  border-radius: 8px;
-  border: 1px solid #374151;
-  background: #1f2937;
-  color: white;
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-.input-group input:focus,
-.input-group textarea:focus {
-  outline: none;
-  border-color: #3b82f6;
-}
-
-button {
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  background: #3b82f6;
-  color: white;
-  font-size: 15px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #2563eb;
-}
-
-
-/* ================= FOOTER ================= */
 footer{
 text-align:center;
-margin-top:50px;
-opacity:0.6;
-}
-
-/* ================= RESPONSIVE ================= */
-@media(max-width:768px){
-.sidebar{
-width:100%;
-height:auto;
-flex-direction:row;
-justify-content:space-around;
-padding:15px 0;
-}
-.main{
-margin-left:0;
-margin-top:80px;
 padding:30px;
+color:#94a3b8;
 }
-}
-  .projects-section {
-  padding: 100px 0;
-  background: #0f172a;
-}
-
-.section-heading {
-  text-align: center;
-  font-size: 40px;
-  margin-bottom: 60px;
-  font-weight: 600;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-}
-
-.project-card {
-  background: #1e293b;
-  padding: 30px;
-  border-radius: 16px;
-  transition: all 0.3s ease;
-  border: 1px solid #334155;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  border-color: #3b82f6;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-.project-card h3 {
-  font-size: 20px;
-  margin-bottom: 15px;
-}
-
-.project-card p {
-  font-size: 14px;
-  color: #94a3b8;
-  margin-bottom: 20px;
-}
-
-.project-links a {
-  text-decoration: none;
-  color: #3b82f6;
-  font-weight: 500;
-}
-
-.project-links a:hover {
-  text-decoration: underline;
-}
-
 
 </style>
 </head>
 
 <body>
 
-<div class="cursor"></div>
+<nav>
+<h3>Shubham</h3>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-<div class="sidebar">
-<h2>Shubham</h2>
-<a href="#home">Home</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
+<!-- HERO -->
+<section id="home" class="hero animate-fade">
+<h1>Shubham Shinde</h1>
+<h2 id="typing"></h2>
+<p>Frontend Developer building clean and modern web experiences.</p>
+<a href="#projects" class="btn">View Projects</a>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="animate-left">
+<h2 class="section-title">Skills</h2>
+<div class="skills-grid">
+<div class="skill-card"><i class="fab fa-html5"></i><h4>HTML5</h4></div>
+<div class="skill-card"><i class="fab fa-css3-alt"></i><h4>CSS3</h4></div>
+<div class="skill-card"><i class="fab fa-js"></i><h4>JavaScript</h4></div>
+<div class="skill-card"><i class="fab fa-react"></i><h4>React</h4></div>
+<div class="skill-card"><i class="fab fa-node-js"></i><h4>Node.js</h4></div>
+<div class="skill-card"><i class="fab fa-git-alt"></i><h4>GitHub</h4></div>
 </div>
-
-<div class="main">
-
-<section id="home" class="hero-section">
-
-  <div class="hero-left">
-    <h1 class="reveal-text">
-      <span>Shubham</span>
-      <span>Shinde</span>
-    </h1>
-
-    <h2 class="typing-text"></h2>
-
-    <p class="hero-desc">
-      Frontend Developer crafting clean and modern web experiences.
-    </p>
-
-    <div class="hero-buttons">
-      <a href="#projects" class="btn-primary">View Work</a>
-      <a href="#contact" class="btn-outline">Contact Me</a>
-    </div>
-  </div>
-
-  <div class="hero-right">
-    <div class="floating-card">
-      <p>HTML</p>
-    </div>
-    <div class="floating-card delay1">
-      <p>CSS</p>
-    </div>
-    <div class="floating-card delay2">
-      <p>JavaScript</p>
-    </div>
-  </div>
-
-  <div class="scroll-indicator"></div>
-
 </section>
 
-<section id="skills" class="skills-section">
-  <div class="skills-container">
-
-    <h2>Skills</h2>
-
-    <div class="skills-grid">
-
-      <div class="skill-card">
-        <i class="fab fa-html5"></i>
-        <h4>HTML5</h4>
-      </div>
-
-      <div class="skill-card">
-        <i class="fab fa-css3-alt"></i>
-        <h4>CSS3</h4>
-      </div>
-
-      <div class="skill-card">
-        <i class="fab fa-js"></i>
-        <h4>JavaScript</h4>
-      </div>
-
-      <div class="skill-card">
-        <i class="fab fa-react"></i>
-        <h4>React</h4>
-      </div>
-
-      <div class="skill-card">
-        <i class="fab fa-node-js"></i>
-        <h4>Node.js</h4>
-      </div>
-
-      <div class="skill-card">
-        <i class="fab fa-git-alt"></i>
-        <h4>Git & GitHub</h4>
-      </div>
-
-    </div>
-
-  </div>
+<!-- PROJECTS -->
+<section id="projects" class="animate-right">
+<h2 class="section-title">Projects</h2>
+<div class="projects-grid">
+<div class="project-card">
+<h3>Android Test</h3>
+<p>Android Programming Project.</p>
+</div>
+<div class="project-card">
+<h3>Diwali Website</h3>
+<p>Festival greeting website.</p>
+</div>
+<div class="project-card">
+<h3>Cyber Security Awareness</h3>
+<p>Security awareness website.</p>
+</div>
+<div class="project-card">
+<h3>Spotify Clone</h3>
+<p>Music Player UI project.</p>
+</div>
+</div>
 </section>
 
-
-
-<section id="projects" class="animate-fade">
-  <div class="container">
-    <h2 class="section-heading">Projects</h2>
-
-    <div class="project-grid">
-
-      <!-- Android Test -->
-      <div class="project-card">
-        <h3>Android Test</h3>
-        <p>Android Programming project built using Java and XML.</p>
-        <div class="project-links">
-          <a href="https://github.com/ShubhamShinde148/Android-Test" target="_blank">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-        </div>
-      </div>
-
-      <!-- Diwali Website -->
-      <div class="project-card">
-        <h3>Diwali Website</h3>
-        <p>Interactive festival greeting website using HTML, CSS & JS.</p>
-        <div class="project-links">
-          <a href="https://github.com/ShubhamShinde148/diwali" target="_blank">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-        </div>
-      </div>
-
-      <!-- Cyber Security -->
-      <div class="project-card">
-        <h3>Cyber Security Awareness</h3>
-        <p>Educational website focused on cyber safety & awareness.</p>
-        <div class="project-links">
-          <a href="https://github.com/ShubhamShinde148/Cyber-security-awareness" target="_blank">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-        </div>
-      </div>
-
-      <!-- Merry Christmas -->
-      <div class="project-card">
-        <h3>Merry Christmas Website</h3>
-        <p>Responsive festive themed website with modern UI.</p>
-        <div class="project-links">
-          <a href="https://github.com/ShubhamShinde148" target="_blank">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-        </div>
-      </div>
-
-      <!-- Animation Showcase -->
-      <div class="project-card">
-        <h3>HTML CSS Animation Showcase</h3>
-        <p>Creative UI animations built using pure CSS.</p>
-        <div class="project-links">
-          <a href="https://github.com/ShubhamShinde148" target="_blank">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-        </div>
-      </div>
-
-      <!-- Spotify Clone -->
-      <div class="project-card">
-        <h3>Spotify Clone</h3>
-        <p>Music player UI inspired by Spotify using HTML & CSS.</p>
-        <div class="project-links">
-          <a href="https://github.com/ShubhamShinde148/spotify" target="_blank">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
+<!-- CONTACT -->
+<section id="contact" class="animate-scale">
+<h2 class="section-title">Contact Me</h2>
+<form class="contact-form">
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button>Send Message</button>
+</form>
 </section>
-
-
-
-<section id="contact" class="contact-section">
-  <div class="contact-container">
-    
-    <h2>Contact Me</h2>
-    <p class="contact-subtitle">
-      Feel free to reach out for collaborations or just a friendly hello 👋
-    </p>
-
-    <form class="contact-form">
-      <div class="input-group">
-        <input type="text" placeholder="Your Name" required>
-      </div>
-
-      <div class="input-group">
-        <input type="email" placeholder="Your Email" required>
-      </div>
-
-      <div class="input-group">
-        <textarea rows="5" placeholder="Your Message" required></textarea>
-      </div>
-
-      <button type="submit">Send Message</button>
-    </form>
-
-  </div>
-</section>
-
 
 <footer>
-© 2026 Shubham Shinde | Designed with ❤️
+© 2026 Shubham Shinde | All Rights Reserved
 </footer>
 
-</div>
-
-<script>
-
-/* Cursor Animation */
-const cursor=document.querySelector(".cursor");
-document.addEventListener("mousemove",e=>{
-cursor.style.left=e.pageX+"px";
-cursor.style.top=e.pageY+"px";
-});
-
-/* Scroll Reveal */
-const sections=document.querySelectorAll("section");
-window.addEventListener("scroll",()=>{
-sections.forEach(sec=>{
-const top=window.scrollY;
-const offset=sec.offsetTop-400;
-if(top>offset){
-sec.classList.add("show");
-}
-});
-});
-  <script>
-gsap.registerPlugin(ScrollTrigger);
-
-// Fade Animation
-gsap.utils.toArray(".animate-fade").forEach((el) => {
-  gsap.to(el, {
-    opacity: 1,
-    duration: 1.2,
-    scrollTrigger: {
-      trigger: el,
-      start: "top 85%",
-    }
-  });
-});
-
-// Slide From Left
-gsap.utils.toArray(".animate-left").forEach((el) => {
-  gsap.fromTo(el,
-    { x: -100, opacity: 0 },
-    {
-      x: 0,
-      opacity: 1,
-      duration: 1.2,
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-      }
-    }
-  );
-});
-
-// Slide From Right
-gsap.utils.toArray(".animate-right").forEach((el) => {
-  gsap.fromTo(el,
-    { x: 100, opacity: 0 },
-    {
-      x: 0,
-      opacity: 1,
-      duration: 1.2,
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-      }
-    }
-  );
-});
-
-// Scale Up
-gsap.utils.toArray(".animate-scale").forEach((el) => {
-  gsap.fromTo(el,
-    { scale: 0.8, opacity: 0 },
-    {
-      scale: 1,
-      opacity: 1,
-      duration: 1.2,
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-      }
-    }
-  );
-});
-  <script>
-window.addEventListener("scroll", function(){
-  const nav = document.querySelector("nav");
-  if(window.scrollY > 50){
-    nav.style.padding = "10px 0";
-    nav.style.background = "#0f172a";
-  } else {
-    nav.style.padding = "20px 0";
-    nav.style.background = "transparent";
-  }
-});
-</script>
-
-</script>
-
-
-</script>
+<!-- GSAP -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// Fade
+gsap.to(".animate-fade", {
+opacity:1,
+duration:1.2
+});
+
+// Left
+gsap.utils.toArray(".animate-left").forEach(el=>{
+gsap.fromTo(el,
+{x:-100,opacity:0},
+{x:0,opacity:1,duration:1.2,
+scrollTrigger:{trigger:el,start:"top 80%"}});
+});
+
+// Right
+gsap.utils.toArray(".animate-right").forEach(el=>{
+gsap.fromTo(el,
+{x:100,opacity:0},
+{x:0,opacity:1,duration:1.2,
+scrollTrigger:{trigger:el,start:"top 80%"}});
+});
+
+// Scale
+gsap.utils.toArray(".animate-scale").forEach(el=>{
+gsap.fromTo(el,
+{scale:0.8,opacity:0},
+{scale:1,opacity:1,duration:1.2,
+scrollTrigger:{trigger:el,start:"top 80%"}});
+});
+
+// Navbar shrink
+window.addEventListener("scroll",()=>{
+const nav=document.querySelector("nav");
+if(window.scrollY>50){
+nav.style.background="#0f172a";
+nav.style.padding="10px 8%";
+}else{
+nav.style.background="transparent";
+nav.style.padding="20px 8%";
+}
+});
+
+// Typing Effect
+const texts=["Frontend Developer","React Developer","UI Designer"];
+let i=0,j=0,current="",isDeleting=false;
+
+function type(){
+if(i<texts.length){
+if(!isDeleting && j<=texts[i].length){
+current=texts[i].substring(0,j++);
+}
+if(isDeleting && j>=0){
+current=texts[i].substring(0,j--);
+}
+document.getElementById("typing").innerHTML=current;
+
+if(j==texts[i].length){
+isDeleting=true;
+setTimeout(type,1000);
+return;
+}
+if(isDeleting && j==0){
+isDeleting=false;
+i++;
+if(i==texts.length)i=0;
+}
+}
+setTimeout(type,isDeleting?50:100);
+}
+type();
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
