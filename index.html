@@ -256,6 +256,59 @@ margin-top:80px;
 padding:30px;
 }
 }
+  .projects-section {
+  padding: 100px 0;
+  background: #0f172a;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 60px;
+  font-weight: 600;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  border: 1px solid #334155;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: #3b82f6;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.project-card h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.project-card p {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+.project-links a {
+  text-decoration: none;
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
+
 
 </style>
 </head>
@@ -292,109 +345,82 @@ padding:30px;
 </div>
 </section>
 
-<section id="projects">
-<h2>My Projects</h2>
+<section id="projects" class="projects-section">
+  <div class="container">
+    <h2 class="section-heading">Projects</h2>
 
-<div class="projects">
+    <div class="project-grid">
 
-<!-- Android Test -->
-<div class="project">
-<img src="https://cdn-icons-png.flaticon.com/512/888/888857.png">
-<div class="overlay">
-<div>
-<h3>Android-Test</h3>
-<p>Android Programming Project</p>
-<a href="https://github.com/ShubhamShinde148/Android-Test" target="_blank">View Code</a>
-</div>
-</div>
-</div>
+      <!-- Android Test -->
+      <div class="project-card">
+        <h3>Android Test</h3>
+        <p>Android Programming project built using Java and XML.</p>
+        <div class="project-links">
+          <a href="https://github.com/ShubhamShinde148/Android-Test" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
 
-<!-- Diwali Website -->
-<div class="project">
-<img src="https://img.freepik.com/free-vector/happy-diwali-festival-card-with-diya-lamps_1017-33744.jpg">
-<div class="overlay">
-<div>
-<h3>Diwali Wishing Website</h3>
-<p>HTML, CSS, Bootstrap & JavaScript</p>
-<a href="https://github.com/ShubhamShinde148/diwali" target="_blank">View Code</a>
-</div>
-</div>
-</div>
+      <!-- Diwali Website -->
+      <div class="project-card">
+        <h3>Diwali Website</h3>
+        <p>Interactive festival greeting website using HTML, CSS & JS.</p>
+        <div class="project-links">
+          <a href="https://github.com/ShubhamShinde148/diwali" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
 
-<!-- My Personal Website -->
-<div class="project">
-<img src="https://img.freepik.com/free-vector/portfolio-concept-illustration_114360-1193.jpg">
-<div class="overlay">
-<div>
-<h3>My Personal Website</h3>
-<p>Responsive Portfolio using HTML & CSS</p>
-<a href="https://github.com/ShubhamShinde148/my-personal-website" target="_blank">View Code</a>
-</div>
-</div>
-</div>
+      <!-- Cyber Security -->
+      <div class="project-card">
+        <h3>Cyber Security Awareness</h3>
+        <p>Educational website focused on cyber safety & awareness.</p>
+        <div class="project-links">
+          <a href="https://github.com/ShubhamShinde148/Cyber-security-awareness" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
 
-<!-- Cyber Security Awareness -->
-<div class="project">
-<img src="https://cdn-icons-png.flaticon.com/512/2092/2092663.png">
-<div class="overlay">
-<div>
-<h3>Cyber Security Awareness</h3>
-<p>Security awareness educational project</p>
-<a href="https://github.com/ShubhamShinde148/Cyber-security-awareness" target="_blank">View Code</a>
-</div>
-</div>
-</div>
+      <!-- Merry Christmas -->
+      <div class="project-card">
+        <h3>Merry Christmas Website</h3>
+        <p>Responsive festive themed website with modern UI.</p>
+        <div class="project-links">
+          <a href="https://github.com/ShubhamShinde148" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
 
-<!-- Merry Christmas Website -->
-<div class="project">
-<img src="https://img.freepik.com/free-vector/christmas-website-template_23-2148793254.jpg">
-<div class="overlay">
-<div>
-<h3>Merry Christmas Website</h3>
-<p>Responsive Christmas themed website</p>
-<a href="https://github.com/ShubhamShinde148/Merry-Christmas" target="_blank">View Code</a>
-</div>
-</div>
-</div>
+      <!-- Animation Showcase -->
+      <div class="project-card">
+        <h3>HTML CSS Animation Showcase</h3>
+        <p>Creative UI animations built using pure CSS.</p>
+        <div class="project-links">
+          <a href="https://github.com/ShubhamShinde148" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
 
-<!-- HTML CSS Animation Showcase -->
-<div class="project">
-<img src="https://img.freepik.com/free-vector/website-development-banner_33099-1687.jpg">
-<div class="overlay">
-<div>
-<h3>HTML CSS Animation Showcase</h3>
-<p>Creative animations using CSS</p>
-<a href="https://github.com/ShubhamShinde148/html-css-animation-showcase" target="_blank">View Code</a>
-</div>
-</div>
-</div>
+      <!-- Spotify Clone -->
+      <div class="project-card">
+        <h3>Spotify Clone</h3>
+        <p>Music player UI inspired by Spotify using HTML & CSS.</p>
+        <div class="project-links">
+          <a href="https://github.com/ShubhamShinde148/spotify" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
 
-<!-- Coding123 -->
-<div class="project">
-<img src="https://img.freepik.com/free-vector/programming-concept-illustration_114360-1351.jpg">
-<div class="overlay">
-<div>
-<h3>Coding123</h3>
-<p>HTML based mini project</p>
-<a href="https://github.com/ShubhamShinde148/coding123" target="_blank">View Code</a>
-</div>
-</div>
-</div>
-
-<!-- Spotify Project -->
-<div class="project">
-<img src="https://img.freepik.com/free-vector/music-streaming-concept-illustration_114360-1081.jpg">
-<div class="overlay">
-<div>
-<h3>Spotify Clone</h3>
-<p>Music Player UI using HTML</p>
-<a href="https://github.com/ShubhamShinde148/spotify" target="_blank">View Code</a>
-</div>
-</div>
-</div>
-
-</div>
+    </div>
+  </div>
 </section>
+
 
 
 <section id="contact">
@@ -438,4 +464,5 @@ sec.classList.add("show");
 
 </body>
 </html>
+
 
