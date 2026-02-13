@@ -205,34 +205,69 @@ text-decoration:none;
 }
 
 /* ================= CONTACT ================= */
-form{
-display:flex;
-flex-direction:column;
-max-width:500px;
+.contact-section {
+  padding: 100px 20px;
+  background: #111827;
+  display: flex;
+  justify-content: center;
 }
 
-input,textarea{
-margin:10px 0;
-padding:12px;
-border:none;
-border-radius:10px;
-background:rgba(255,255,255,0.1);
-color:white;
+.contact-container {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
 }
 
-button{
-padding:12px;
-border:none;
-border-radius:30px;
-background:#00ffff;
-color:black;
-cursor:pointer;
-transition:0.4s;
+.contact-container h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
 }
 
-button:hover{
-box-shadow:0 0 20px #00ffff;
+.contact-subtitle {
+  color: #9ca3af;
+  margin-bottom: 40px;
+  font-size: 14px;
 }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  background: #1f2937;
+  color: white;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+button {
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
 
 /* ================= FOOTER ================= */
 footer{
@@ -423,15 +458,33 @@ padding:30px;
 
 
 
-<section id="contact">
-<h2>Contact Me</h2>
-<form>
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Your Email">
-<textarea rows="5" placeholder="Your Message"></textarea>
-<button>Send Message</button>
-</form>
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    
+    <h2>Contact Me</h2>
+    <p class="contact-subtitle">
+      Feel free to reach out for collaborations or just a friendly hello 👋
+    </p>
+
+    <form class="contact-form">
+      <div class="input-group">
+        <input type="text" placeholder="Your Name" required>
+      </div>
+
+      <div class="input-group">
+        <input type="email" placeholder="Your Email" required>
+      </div>
+
+      <div class="input-group">
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+      </div>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+  </div>
 </section>
+
 
 <footer>
 © 2026 Shubham Shinde | Designed with ❤️
@@ -464,5 +517,6 @@ sec.classList.add("show");
 
 </body>
 </html>
+
 
 
